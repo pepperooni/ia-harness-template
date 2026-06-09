@@ -7,7 +7,6 @@ packmind-update:
   timeout: 15 minutes
   variables:
     GIT_DEPTH: 0
-    PACKMIND_API_KEY_V3: $PACKMIND_API_KEY_V3
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
   script:
