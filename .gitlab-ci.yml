@@ -1,0 +1,40 @@
+stages:
+  - deploy
+
+packmind-update:
+  stage: deploy
+  image: node:20-slim
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  variables:
+    PACKMIND_TOKEN: $PACKMIND_TOKEN
+  script:
+    - npm install -g @packmind/packmind-cli
+    # Auth : à ajuster selon la méthode supportée par le CLI (token env var ou --token flag)
+    # Option A (variable lue automatiquement) : aucune commande supplémentaire
+    # Option B : packmind-cli login --token "$PACKMIND_TOKEN"
+    - packmind-cli whoami
+    - |
+      CHANGED=$(git diff --name-only HEAD~1 HEAD -- \
+        CLAUDE.md \
+        .claude/standards/ \
+        .claude/skills/ \
+        .claude/commands/ \
+        .packmind/ \
+        packmind.json \
+        scripts/ \
+        2>/dev/null || true)
+    - |
+      if [ -z "$CHANGED" ]; then
+        echo "Aucun fichier Packmind modifié, job ignoré."
+        exit 0
+      fi
+    - echo "Fichiers modifiés détectés :" && echo "$CHANGED"
+    - |
+      for f in $CHANGED; do
+        packmind-cli playbook add "$f"
+      done
+    - packmind-cli playbook status
+    - |
+      packmind-cli playbook submit \
+        -m "ci: mise à jour ia-harness — $CI_COMMIT_SHORT_SHA ($CI_COMMIT_TITLE)"

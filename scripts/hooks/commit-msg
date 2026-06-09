@@ -1,0 +1,43 @@
+#!/usr/bin/env sh
+# ---------------------------------------------------------------------------
+# Hook commit-msg — valide la convention de commit du projet.
+# Agnostique au langage (POSIX sh). Vérifie :
+#   1. Format Conventional Commits sur la 1re ligne
+#   2. Présence d'une clé JIRA  [PROJET-123]
+#   3. Présence d'une description fonctionnelle (corps non vide)
+#
+# Installation (au choix) :
+#   git config core.hooksPath scripts/hooks
+#   # ou copier ce fichier dans .git/hooks/commit-msg et le rendre exécutable
+#   chmod +x scripts/hooks/commit-msg
+# ---------------------------------------------------------------------------
+
+MSG_FILE="$1"
+SUBJECT="$(sed -n '1p' "$MSG_FILE")"
+BODY="$(sed -n '3,$p' "$MSG_FILE" | grep -v '^#' | tr -d '[:space:]')"
+
+# 🔧 À COMPLÉTER : préfixe(s) de projet JIRA autorisé(s).
+JIRA_PREFIXES="ABC|PAY|CORE|JIRAI"
+
+TYPES="feat|fix|refactor|test|docs|chore|build|ci|perf|style"
+
+fail() { echo "✖ commit-msg: $1" >&2; exit 1; }
+
+# 1 + 2 : Conventional Commits + clé JIRA sur la première ligne
+if ! printf '%s' "$SUBJECT" | grep -Eq "^($TYPES)(\([a-z0-9._-]+\))?: .+\[(${JIRA_PREFIXES})-[0-9]+\]$"; then
+  fail "format attendu : <type>(<scope>): <résumé> [PROJET-123]
+       reçu : $SUBJECT"
+fi
+
+# longueur du sujet
+if [ "${#SUBJECT}" -gt 100 ]; then
+  fail "première ligne trop longue (${#SUBJECT} > 100)."
+fi
+
+# 3 : description fonctionnelle obligatoire (corps non vide après ligne vide)
+if [ -z "$BODY" ]; then
+  fail "description fonctionnelle manquante (ajouter un corps expliquant la valeur métier)."
+fi
+
+echo "✔ commit-msg: conforme"
+exit 0

@@ -1,0 +1,38 @@
+{
+  "name": "ia-harness",
+  "description": "Harness Claude Code — règles TDD, architecture hexagonale, standards de livraison et skill d'installation auto-détectée.",
+  "version": "1.0.0",
+  "space": "global",
+  "artifacts": [
+    {
+      "type": "skill",
+      "path": ".claude/skills/install-harness"
+    },
+    {
+      "type": "skill",
+      "path": ".claude/skills/validation-workflow"
+    }
+  ],
+  "files": [
+    "CLAUDE.md",
+    ".claude/rules/tdd.md",
+    ".claude/rules/hexagonal-architecture.md",
+    ".claude/rules/mitosis.md",
+    ".claude/rules/clean-code.md",
+    ".claude/rules/test-coverage.md",
+    ".claude/rules/observability.md",
+    ".claude/standards/definition-of-done.md",
+    ".claude/standards/commit-convention.md",
+    ".claude/commands/validate.md",
+    ".claude/commands/new-feature.md",
+    ".claude/commands/commit.md",
+    "scripts/hooks/commit-msg",
+    "packages/_TEMPLATE_PACKAGE/CLAUDE.md"
+  ],
+  "packages": {
+    "@global/ia-harness": "*"
+  },
+  "agents": [
+    "claude"
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "lockfileVersion": 2,
+  "packageSlugs": [
+    "@global/ia-harness"
+  ],
+  "agents": [
+    "claude",
+    "packmind"
+  ],
+  "installedAt": "2026-06-09T07:56:15.486Z",
+  "artifacts": {
+    "user:command:commit": {
+      "name": "Commit",
+      "type": "command",
+      "id": "c5a54f62-2c45-45ea-8f0c-6f132a70fc7e",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/commands/commit.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/commands/commit.md",
+          "agent": "packmind"
+        }
+      ]
+    },
+    "user:command:new-feature": {
+      "name": "New feature",
+      "type": "command",
+      "id": "827bdeff-bc76-4a02-966b-d8903cf2eaef",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/commands/new-feature.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/commands/new-feature.md",
+          "agent": "packmind"
+        }
+      ]
+    },
+    "user:command:validate": {
+      "name": "Validate",
+      "type": "command",
+      "id": "aa4b9694-037e-4572-a8c9-96024ecd9aac",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/commands/validate.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/commands/validate.md",
+          "agent": "packmind"
+        }
+      ]
+    },
+    "user:skill:install-harness": {
+      "name": "install-harness",
+      "type": "skill",
+      "id": "b6c84940-0aa8-407c-932d-5770659b3efc",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/skills/install-harness/SKILL.md",
+          "agent": "claude",
+          "isSkillDefinition": true
+        }
+      ]
+    },
+    "user:skill:validation-workflow": {
+      "name": "validation-workflow",
+      "type": "skill",
+      "id": "c1257470-2ccd-40d6-9871-6a095dab0d40",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/skills/validation-workflow/SKILL.md",
+          "agent": "claude",
+          "isSkillDefinition": true
+        }
+      ]
+    },
+    "user:standard:clean-code": {
+      "name": "Clean Code",
+      "type": "standard",
+      "id": "e2fd8902-4aef-4852-8518-6ffe2fcb728a",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/rules/packmind/standard-clean-code.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/standards/clean-code.md",
+          "agent": "packmind"
+        }
+      ]
+    },
+    "user:standard:commit-convention-conventional-commits-jira": {
+      "name": "Commit Convention — Conventional Commits + JIRA",
+      "type": "standard",
+      "id": "08db995e-64f1-4787-a8ee-27f86bc766d5",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/rules/packmind/standard-commit-convention-conventional-commits-jira.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/standards/commit-convention-conventional-commits-jira.md",
+          "agent": "packmind"
+        }
+      ]
+    },
+    "user:standard:definition-of-done": {
+      "name": "Definition of Done",
+      "type": "standard",
+      "id": "e60f2c10-8341-48a0-8b11-a73ffc3928b4",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/rules/packmind/standard-definition-of-done.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/standards/definition-of-done.md",
+          "agent": "packmind"
+        }
+      ]
+    },
+    "user:standard:hexagonal-architecture-ports-adapters": {
+      "name": "Hexagonal Architecture — Ports & Adapters",
+      "type": "standard",
+      "id": "dd92c83a-74a0-466f-bf5f-c60a05e93a04",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/rules/packmind/standard-hexagonal-architecture-ports-adapters.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/standards/hexagonal-architecture-ports-adapters.md",
+          "agent": "packmind"
+        }
+      ]
+    },
+    "user:standard:mitosis-continuous-module-division": {
+      "name": "Mitosis — Continuous Module Division",
+      "type": "standard",
+      "id": "c994ac93-a069-4b80-91d9-cb5c3ae3eb29",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/rules/packmind/standard-mitosis-continuous-module-division.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/standards/mitosis-continuous-module-division.md",
+          "agent": "packmind"
+        }
+      ]
+    },
+    "user:standard:observability-structured-logs-and-traces": {
+      "name": "Observability — Structured Logs and Traces",
+      "type": "standard",
+      "id": "2ab9b06d-615a-484d-a8c2-44b774837482",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/rules/packmind/standard-observability-structured-logs-and-traces.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/standards/observability-structured-logs-and-traces.md",
+          "agent": "packmind"
+        }
+      ]
+    },
+    "user:standard:tdd-test-driven-development": {
+      "name": "TDD — Test-Driven Development",
+      "type": "standard",
+      "id": "05fe1076-bbd7-4f9d-9a12-c1f778973a01",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/rules/packmind/standard-tdd-test-driven-development.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/standards/tdd-test-driven-development.md",
+          "agent": "packmind"
+        }
+      ]
+    },
+    "user:standard:test-coverage-layer-differentiated-policy": {
+      "name": "Test Coverage — Layer-Differentiated Policy",
+      "type": "standard",
+      "id": "2fd41a80-7697-4f99-b5c9-e6c1ff3c6c99",
+      "version": 1,
+      "spaceId": "2b92bfb6-c6ac-418b-93e8-22c15838d4ce",
+      "packageIds": [
+        "c84aba7f-36f9-4104-bcd5-256ea5c6aeeb"
+      ],
+      "source": "user",
+      "files": [
+        {
+          "path": ".claude/rules/packmind/standard-test-coverage-layer-differentiated-policy.md",
+          "agent": "claude"
+        },
+        {
+          "path": ".packmind/standards/test-coverage-layer-differentiated-policy.md",
+          "agent": "packmind"
+        }
+      ]
+    }
+  }
+}
