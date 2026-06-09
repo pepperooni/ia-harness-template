@@ -3,16 +3,15 @@ stages:
 
 packmind-update:
   stage: deploy
-  image: node:20-slim
+  image: node:22.17.0
+  timeout: 15 minutes
+  variables:
+    GIT_DEPTH: 0
+    PACKMIND_API_KEY_V3: $PACKMIND_API_KEY_V3
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
-  variables:
-    PACKMIND_TOKEN: $PACKMIND_TOKEN
   script:
-    - npm install -g @packmind/packmind-cli
-    # Auth : à ajuster selon la méthode supportée par le CLI (token env var ou --token flag)
-    # Option A (variable lue automatiquement) : aucune commande supplémentaire
-    # Option B : packmind-cli login --token "$PACKMIND_TOKEN"
+    - npm install -g @packmind/cli
     - packmind-cli whoami
     - |
       CHANGED=$(git diff --name-only HEAD~1 HEAD -- \
@@ -22,14 +21,13 @@ packmind-update:
         .claude/commands/ \
         .packmind/ \
         packmind.json \
-        scripts/ \
-        2>/dev/null || true)
+        scripts/)
     - |
       if [ -z "$CHANGED" ]; then
         echo "Aucun fichier Packmind modifié, job ignoré."
         exit 0
       fi
-    - echo "Fichiers modifiés détectés :" && echo "$CHANGED"
+    - echo "Fichiers modifiés :" && echo "$CHANGED"
     - |
       for f in $CHANGED; do
         packmind-cli playbook add "$f"
